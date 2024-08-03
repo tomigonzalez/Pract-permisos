@@ -25,10 +25,20 @@
                         <div class="mb-3">
                             <label for="inputText" class="block text-sm font-medium text-gray-700 dark:text-gray-200"><b>Permisos</b></label>
                    
+                            @php
+
+                            foreach ($lista de las columnas de tabla - tales columnas as input)
+                            
+                                                            clase -> createinput (input'nombre', 'input-')
                             @foreach($getPermission as $value)
                             
                             <div class="flex row justify-between mb-3">
                                 
+
+                                
+                                
+
+
                                     <div class="mt-1 w-2/5">
                                         {{$value['name']}}
                                     </div>
