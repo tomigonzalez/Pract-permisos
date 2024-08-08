@@ -25,49 +25,42 @@
                         <div class="mb-3">
                             <label for="inputText" class="block text-sm font-medium text-gray-700 dark:text-gray-200"><b>Permisos</b></label>
                    
-                            @php
+                           
 
-                            foreach ($lista de las columnas de tabla - tales columnas as input)
+                            // foreach   ($lista de las columnas de tabla - tales columnas as input)
                             
-                                                            clase -> createinput (input'nombre', 'input-')
+                            // clase -> createinput (input'nombre', 'input-')
                             @foreach($getPermission as $value)
-                            
                             <div class="flex row justify-between mb-3">
-                                
-
-                                
-                                
-
-
-                                    <div class="mt-1 w-2/5">
-                                        {{$value['name']}}
-                                    </div>
-                                    <div class="mt-1 w-1/2">
-                                        <div class="flex row justify-between">
+                                <div class="mt-1 w-2/5">
+                                    {{ $value['name'] }}
+                                </div>
+                                <div class="mt-1 w-1/2">
+                                    <div class="flex row justify-between">
                                         @foreach($value['group'] as $group)
                                             @php
-                                                $checked = '';
+                                                $checked = false;
                                             @endphp
                                             @foreach($getRolePermission as $role)
-                                               
-                                            @if ($role->permission_id == $group['id'])
-                                                @php
-                                                    $checked = 'checked';
-                                                @endphp
-                                            @endif
+                                                @if ($role->permission_id == $group['id'])
+                                                    @php
+                                                        $checked = true;
+                                                    @endphp
+                                                @endif
                                             @endforeach
-
-                                                <div class="col-span-2 flex ">
-                                               <label ><input type="checkbox" {{$checked}} value="{{$group['id']}}" name="permission_id[]"> {{$group['name']}}</label>
-                                                </div>
+                                            <x-checkbox 
+                                                :checked="$checked" 
+                                                :value="$group['id']" 
+                                                name="permission_id[]" 
+                                                :label="$group['name']" 
+                                            />
                                         @endforeach
-                                            </div>
                                     </div>
-                                
-                                
+                                </div>
                             </div>
-                            <hr> 
-                            @endforeach
+                            <hr>
+                        @endforeach
+                        
                        
                         </div>
                         <div class="mb-3">

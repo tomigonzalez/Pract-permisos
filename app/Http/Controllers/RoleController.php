@@ -22,8 +22,8 @@ class RoleController extends Controller
         $data['PermissionDelete']=PermisosRoleModel::getPermission('Delete Role', Auth::user()->role_id);
         $data['getRecord'] = RoleModel::getRecord();
     
-        return view('/role/role',compact('data'));
-        return view('/role/role',$data);
+        //  return view('/role/role',compact('data'));
+         return view('/role/role',$data);
 
         
     }
@@ -72,8 +72,8 @@ class RoleController extends Controller
         $data['getPermission'] = PermisosModel::getRecord();
         $data['getRolePermission'] = PermisosRoleModel::getRolePermission($id);
 
-        return view('/role/edit',$data);
-        return view('/role/add', compact('data'));
+        // return view('/role/edit',$data);
+         return view('/role/add', compact('data'));
 
     }
     public function update($id,Request $request)

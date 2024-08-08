@@ -34,7 +34,14 @@
                                             <div class="flex row justify-between">
                                         @foreach($value['group'] as $group)
                                                 <div class="col-span-2 flex ">
-                                               <label ><input type="checkbox" value="{{$group['id']}}" name="permission_id[]"> {{$group['name']}}</label>
+                                              
+                                                <x-checkbox 
+                                                 :checked="false" 
+                                                 :value="$group['id']" 
+                                                 name="permission_id[]" 
+                                                 :label="$group['name']" 
+                                                />
+                                                
                                                 </div>
                                         @endforeach
                                             </div>
